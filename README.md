@@ -2,7 +2,9 @@
 
 [Electron](https://zh.wikipedia.org/wiki/Electron) : 可以使用前端技術(css,js,html)來打造桌面應用程式的GUI
 
-Electron自帶[Chromium]，所以您不要擔心瀏覽器的問題，反正他自帶了。
+Electron自帶[Chromium]，所以您不要擔心瀏覽器的問題，反正它自帶了。
+
+您只要準備好您的前端文件，再把Electron整包鑲入，即可運行。
 
 ## 下載electron
 
@@ -34,4 +36,8 @@ cd到electron.exe的資料夾，或者要把此資料夾加到環境變數都行
 
 > electron.exe path-to-app
 
-其中path-to-app是您的app資料夾路徑
+其中path-to-app是您的app資料夾路徑，例如[此資料夾](src/)
+
+## 相關連結
+- [electronjs.API參考](https://www.electronjs.org/docs/latest/api/app)
+- [nodejs.API](https://nodejs.org/docs/latest/api/)
