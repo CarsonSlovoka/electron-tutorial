@@ -7,6 +7,11 @@ const BrowserWindow = electron.BrowserWindow
 
 let mainWindow // 一個準備接受browserWindow的對象
 
+function onReady() {
+  createWindow()
+  createTray()
+
+}
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 300,
@@ -24,5 +29,16 @@ function createWindow() {
   })
 }
 
-app.on("ready", createWindow)
+function createTray() {
+  const tray = new electron.Tray( __dirname + '/assets/img/favicon.ico')
+  const contextMenu = electron.Menu.buildFromTemplate([
+    { label: 'Item1', type: 'radio' },
+    { label: 'Item2', type: 'radio', checked: true },
+    { label: 'Item3', type: 'radio' }
+  ])
+  tray.setToolTip('This is my application.')
+  tray.setContextMenu(contextMenu)
+}
+
+app.on("ready", onReady)
 app.on("window-all-closed", () => app.exit(0))
